@@ -1,0 +1,5 @@
+# Runtime dependencies of alt_celery3_contract.
+# The package is purely declarative: Pydantic is the only runtime requirement.
+# Keep this file in sync with [project.dependencies] in pyproject.toml.
+
+pydantic>=2.7,<3

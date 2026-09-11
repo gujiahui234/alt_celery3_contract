@@ -1,0 +1,10 @@
+# Conda environment for developing / consuming alt_celery3_contract.
+# Create it with:  conda env create -f environment.yml
+name: alt-celery3-contract
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.11
+  - pip
+  - pip:
+      - -e .[dev,docs]
