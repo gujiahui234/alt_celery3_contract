@@ -1,7 +1,7 @@
 # alt_celery3_contract
 
 Declarative, strongly-typed **task contracts** for the
-[`alt_celery3`](https://github.com/ashida2016/alt_celery3) Celery
+[`alt_celery3`](https://github.com/gujiahui234/alt_celery3) Celery
 application.
 
 This package is a pure *contract layer* extracted (statically) from
@@ -40,10 +40,10 @@ signature equals the producer-facing signature.
 
 ```bash
 # From GitHub (recommended for producers of alt_celery3)
-pip install git+https://github.com/ashida2016/alt_celery3_contract.git
+pip install git+https://github.com/gujiahui234/alt_celery3_contract.git
 
 # Development install
-git clone https://github.com/ashida2016/alt_celery3_contract
+git clone https://github.com/gujiahui234/alt_celery3_contract
 cd alt_celery3_contract
 pip install -e .[dev,docs]
 ```

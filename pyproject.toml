@@ -49,9 +49,9 @@ docs = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/ashida2016/alt_celery3_contract"
+Homepage = "https://github.com/gujiahui234/alt_celery3_contract"
 Documentation = "https://alt-celery3-contract.readthedocs.io"
-Source = "https://github.com/ashida2016/alt_celery3_contract"
+Source = "https://github.com/gujiahui234/alt_celery3_contract"
 
 [tool.setuptools.packages.find]
 where = ["src"]
