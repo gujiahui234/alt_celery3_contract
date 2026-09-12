@@ -237,6 +237,33 @@ def simu_graduate(
     raise NotImplementedError
 
 
+def one_stop_graduation(
+    ncee_year: int, threads: int = DEFAULT_THREADS, exam_years: int = 1
+) -> dict[str, Any]:
+    """Contract of ``tasks.pipeline.one_stop_graduation``: full lifecycle.
+
+    Chains the existing simulation tasks for one cohort, in order:
+    ``simu_ncee`` → ``simu_admission`` → ``simu_exam`` (for ``exam_years``
+    consecutive academic years starting at ``ncee_year``) → ``simu_graduate``
+    (graduation year ``ncee_year + 4``). Aggregated statistics are returned.
+
+    Args:
+        ncee_year: Cohort year (exam date ``{ncee_year}-06-20``).
+        threads: Concurrent writer threads (clamped to ``[1, 32]``).
+        exam_years: Academic years of exams to simulate (1-4).
+
+    Returns:
+        Dictionary with ``ok``, per-step summaries under ``steps`` and
+        aggregated counters (``examined`` / ``admitted`` / ``exams_recorded``
+        / ``graduated`` / ``average_gpa``). On a failed step ``ok`` is
+        ``False`` and ``failed_step`` names the step.
+
+    Raises:
+        NotImplementedError: Always — declarative contract only.
+    """
+    raise NotImplementedError
+
+
 __all__ = [
     "add",
     "scheduled_add",
@@ -249,5 +276,6 @@ __all__ = [
     "simu_admission",
     "simu_exam",
     "simu_graduate",
+    "one_stop_graduation",
     "constants",
 ]

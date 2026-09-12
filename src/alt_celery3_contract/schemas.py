@@ -180,6 +180,36 @@ class SimuGraduatePayload(_ContractModel):
     )
 
 
+class OneStopGraduationPayload(_ContractModel):
+    """Payload of ``tasks.pipeline.one_stop_graduation`` (一条龙毕业).
+
+    The worker chains ``simu_ncee`` → ``simu_admission`` → ``simu_exam``
+    (repeated for ``exam_years`` academic years) → ``simu_graduate`` for the
+    ``ncee_year`` cohort and returns aggregated statistics.
+
+    Attributes:
+        ncee_year: Cohort year (exam date ``{ncee_year}-06-20``, graduation
+            date ``{ncee_year + 4}-07-01``).
+        threads: Concurrent writer threads used by every sub-task.
+        exam_years: How many consecutive academic years of undergraduate
+            exams to simulate (1-4, starting at ``ncee_year``).
+    """
+
+    ncee_year: int = Field(description="Cohort year (exam date: June 20th).")
+    threads: int = Field(
+        default=8,
+        ge=1,
+        le=32,
+        description="Concurrent writer threads (worker clamps to [1, 32]).",
+    )
+    exam_years: int = Field(
+        default=1,
+        ge=1,
+        le=4,
+        description="Academic years of exams to simulate (worker clamps to [1, 4]).",
+    )
+
+
 __all__ = [
     "AddPayload",
     "ScheduledAddPayload",
@@ -189,4 +219,5 @@ __all__ = [
     "SimuAdmissionPayload",
     "SimuExamPayload",
     "SimuGraduatePayload",
+    "OneStopGraduationPayload",
 ]

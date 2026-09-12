@@ -20,6 +20,7 @@ from .constants import (
     TASK_GET_ONE_STUDENT,
     TASK_GET_UN_GROUPS,
     TASK_INIT_WEB_DB,
+    TASK_ONE_STOP_GRADUATION,
     TASK_SCHEDULED_ADD,
     TASK_SIMU_ADMISSION,
     TASK_SIMU_EXAM,
@@ -33,6 +34,7 @@ from .definitions import (
     get_one_student,
     get_un_groups,
     init_web_db,
+    one_stop_graduation,
     scheduled_add,
     simu_admission,
     simu_exam,
@@ -44,6 +46,7 @@ from .schemas import (
     AddPayload,
     GenerateManyStudentsPayload,
     GetUnGroupsPayload,
+    OneStopGraduationPayload,
     ScheduledAddPayload,
     SimuAdmissionPayload,
     SimuExamPayload,
@@ -51,7 +54,7 @@ from .schemas import (
     SimuNceePayload,
 )
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 __all__ = [
     "__version__",
@@ -71,6 +74,7 @@ __all__ = [
     "TASK_SIMU_ADMISSION",
     "TASK_SIMU_EXAM",
     "TASK_SIMU_GRADUATE",
+    "TASK_ONE_STOP_GRADUATION",
     # Contract definitions
     "add",
     "scheduled_add",
@@ -83,6 +87,7 @@ __all__ = [
     "simu_admission",
     "simu_exam",
     "simu_graduate",
+    "one_stop_graduation",
     # Payload schemas
     "AddPayload",
     "ScheduledAddPayload",
@@ -92,4 +97,5 @@ __all__ = [
     "SimuAdmissionPayload",
     "SimuExamPayload",
     "SimuGraduatePayload",
+    "OneStopGraduationPayload",
 ]

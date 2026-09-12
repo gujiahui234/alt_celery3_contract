@@ -146,6 +146,13 @@ TASK_CATALOG: dict[str, TaskContract] = {
         module="app.tasks.simulation_tasks",
         bound=True,
     ),
+    constants.TASK_ONE_STOP_GRADUATION: TaskContract(
+        name=constants.TASK_ONE_STOP_GRADUATION,
+        definition=definitions.one_stop_graduation,
+        schema=schemas.OneStopGraduationPayload,
+        module="app.tasks.pipeline_tasks",
+        bound=True,
+    ),
 }
 
 __all__ = ["TaskContract", "TASK_CATALOG"]

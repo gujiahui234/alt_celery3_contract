@@ -44,6 +44,8 @@ class TaskName(str, Enum):
     TASK_SIMU_EXAM = "tasks.simu.exam"
     #: Graduation with GPA computation for a cohort enrolled 4 years earlier.
     TASK_SIMU_GRADUATE = "tasks.simu.graduate"
+    #: One-stop pipeline: ncee -> admission -> exams -> graduation for a cohort.
+    TASK_ONE_STOP_GRADUATION = "tasks.pipeline.one_stop_graduation"
 
 
 # --- Module-level aliases ----------------------------------------------------
@@ -61,6 +63,7 @@ TASK_SIMU_NCEE = TaskName.TASK_SIMU_NCEE.value
 TASK_SIMU_ADMISSION = TaskName.TASK_SIMU_ADMISSION.value
 TASK_SIMU_EXAM = TaskName.TASK_SIMU_EXAM.value
 TASK_SIMU_GRADUATE = TaskName.TASK_SIMU_GRADUATE.value
+TASK_ONE_STOP_GRADUATION = TaskName.TASK_ONE_STOP_GRADUATION.value
 
 __all__ = [
     "TaskName",
@@ -75,4 +78,5 @@ __all__ = [
     "TASK_SIMU_ADMISSION",
     "TASK_SIMU_EXAM",
     "TASK_SIMU_GRADUATE",
+    "TASK_ONE_STOP_GRADUATION",
 ]
