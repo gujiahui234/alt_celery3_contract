@@ -12,12 +12,12 @@ is `pydantic`.
 
 | Module | Content |
 |---|---|
-| `constants` | `TaskName` enum + `TASK_*` aliases for all 11 canonical task names |
+| `constants` | `TaskName` enum + `TASK_*` aliases for all 12 canonical task names |
 | `schemas` | Pydantic v2 payload models with declared field constraints |
 | `definitions` | Contract functions: signature mirrors only (`raise NotImplementedError`) |
 | `catalog` | `TASK_CATALOG` — task name → contract function / schema / source module |
 
-## Covered tasks (11)
+## Covered tasks (12)
 
 | Task name | Contract function | Payload schema |
 |---|---|---|
@@ -32,6 +32,7 @@ is `pydantic`.
 | `tasks.simu.admission` | `simu_admission(ncee_year, threads=8)` | `SimuAdmissionPayload` |
 | `tasks.simu.exam` | `simu_exam(academic_year, threads=8)` | `SimuExamPayload` |
 | `tasks.simu.graduate` | `simu_graduate(graduate_year, threads=8)` | `SimuGraduatePayload` |
+| `tasks.pipeline.one_stop_graduation` | `one_stop_graduation(ncee_year, threads=8, exam_years=1)` | `OneStopGraduationPayload` |
 
 `bind=True` tasks had their leading `self` argument stripped; the contract
 signature equals the producer-facing signature.
